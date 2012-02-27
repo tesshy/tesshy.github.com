@@ -1,0 +1,16 @@
+<video id="myVideo" width="400" height="300" autoplay></video>
+<script type="text/javascript">
+ var video = document.getElementById('myVideo');
+ // OperaはgetUserMediaを使う
+ navigator.webkitGetUserMedia("audio, video", success, error);
+ 
+ function success(stream) {
+  console.log(stream);
+  
+  video.src = window.webkitURL.createObjectURL(stream);
+ }
+ 
+ function error(err) {
+  console.log(err);
+ }
+</script>
